@@ -1,12 +1,4 @@
 version: 1
-env:
-  variables:
-      key: value
-backend:
-  phases:
-    build:
-      commands:
-        - amplifyPush --simple
 frontend:
   phases:
     preBuild:
@@ -14,6 +6,7 @@ frontend:
         - npm install
     build:
       commands:
+        - amplifyPush --simple
         - npm run build
   artifacts:
     baseDirectory: build
